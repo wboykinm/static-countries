@@ -14,6 +14,10 @@
 
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
         <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
+        <link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
+          <!--[if lte IE 8]>
+            <link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.ie.css' rel='stylesheet'>
+          <![endif]-->
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -39,16 +43,8 @@
         </header>-->
         <section class="dashboard pure-g-r clearfix">
             <div class="pure-u-1 dashboard-piece dashboard-piece-redbg dashboard-piece-logo">
-                <h1>
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="132.89669167px" height="120px" viewBox="0 0 73.351 82.791" enable-background="new 0 0 73.351 82.791" xml:space="preserve">
-                        <g>
-                            <path fill="#FFFFFF" d="M7.372,27.487C-1.903,39.206-2.261,55.13,5.369,67.05c6.858-17.611,15.499-37.423,26.14-55.114
-                                C21.514,16.159,12.19,21.405,7.372,27.487z M73.333,2.971c-0.11-0.924-0.589-1.7-1.276-2.216C71.4,0.204,70.53-0.084,69.612,0.021
-                                c0,0-2.738,0.589-7.093,1.704C41.722,21.698,24.654,48.459,11.43,74.155c0.492,0.427,0.991,0.857,1.512,1.268
-                                c14.784,11.696,36.239,9.194,47.936-5.57C74.349,52.822,73.333,2.971,73.333,2.971z"/>
-                        </g>
-                    </svg>
-                </h1>
+                <div id="map">
+                </div>
             </div>
             <div class="pure-u-1-3 dashboard-piece dashboard-piece-bluebg">
                 <div class="dashboard-content">
@@ -140,8 +136,16 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script>
+            var map = L.mapbox.map('map', 'examples.map-zr0njcqy');
+
+            map.markerLayer.on('click', function(e) {
+                map.panTo(e.layer.getLatLng());
+            });
+        </script>
 
     </body>
 </html>
