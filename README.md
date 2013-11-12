@@ -36,5 +36,5 @@ Web Mercator projection is entirely unsuited to realistically representing polar
 
 ## To-Do
 * Add a mask to bring focus to the country in question. More likely with a Canvas-based halo than a vector layer.
-* Beef up the Database to include all levels of admin feature. CartoDB is currently backing this beast.
+* Beef up the Database to include all levels of admin feature. [CartoDB](http://developers.cartodb.com/documentation/sql-api.html) is currently backing this beast.
 * Rewrite in Javascript. I mean, seriously? PHP?
