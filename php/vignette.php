@@ -38,8 +38,10 @@ $angle = $east - $west;
 if ($angle < 0) {
   $angle += 360;
 }
-$zoom = floor(log(256 * 360 / $angle / $GLOBE_WIDTH) / 0.6931471805599453) + 1;
-
+$zoom = floor(log(256 * 360 / $angle / $GLOBE_WIDTH) / 0.6931471805599453);
+if ($zoom < 1) {
+  $zoom = 1;
+}
 # Build the call to the Mapbox static API and request the image
 $targetMap = "http://api.tiles.mapbox.com/v3/" . $mapID . "/" . $lon . "," . $lat . "," . $zoom . "/" . $width . "x" . $height . ".png";
 
