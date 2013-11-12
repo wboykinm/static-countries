@@ -27,9 +27,14 @@ http://dev.geosprocket.com/mapbox/vignette.php?name=bolivia&mapid=examples.map-z
 
 Returns this:
 
-<img src="http://dev.geosprocket.com/mapbox/vignette.php?name=canada&mapid=examples.map-zr0njcqy&width=600&height=400"/>
+<img src="http://dev.geosprocket.com/mapbox/vignette.php?name=bolivia&mapid=examples.map-zr0njcqy&width=300&height=300"/>
 
 HOWEVER . . . I have not put a lot of juice into this server, so I strongly discourage you from using it in a production environment. 
 
 ### Another Caveat
-Web Mercator projection is entirely unsuited to realistically representing large, polar-leaning countries like Russia and Canada. For that I recommend D3 and a tasty orthographic projection [like this](http://bl.ocks.org/wboykinm/7425298)
+Web Mercator projection is entirely unsuited to realistically representing polar-leaning countries like Russia, Canada and New Zealand. For that I recommend D3 and a tasty orthographic projection [like this](http://bl.ocks.org/wboykinm/7425298)
+
+## To-Do
+* Add a mask to bring focus to the country in question. More likely with a Canvas-based halo than a vector layer.
+* Beef up the Database to include all levels of admin feature. CartoDB is currently backing this beast.
+* Rewrite in Javascript. I mean, seriously? PHP?
